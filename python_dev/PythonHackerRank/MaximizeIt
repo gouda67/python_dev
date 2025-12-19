@@ -1,0 +1,38 @@
+from itertools import product
+import sys
+
+def maximize_it():
+    print("Enter K (number of lists):")
+    K_input = sys.stdin.readline().strip()
+    if not K_input: return
+    K = int(K_input)
+
+    print("Enter M (modulus):")
+    M_input = sys.stdin.readline().strip()
+    if not M_input: return
+    M = int(M_input)
+
+    lists = []
+    for i in range(K):
+        print(f"Enter list no.{i+1} (first number is size, then elements separated by space):")
+        line = sys.stdin.readline().split()
+        if not line: break
+        
+        # line[0] is the size of the list, line[1:] are the actual elements
+        elements = list(map(int, line[1:]))
+        lists.append(elements)
+
+    max_s_mod_m = 0
+
+    # product(*lists) creates all possible combinations picking one element from each list
+    for combination in product(*lists):
+        current_s = sum(x**2 for x in combination)
+        s_mod_m = current_s % M
+        
+        if s_mod_m > max_s_mod_m:
+            max_s_mod_m = s_mod_m
+            
+    print("Maximum result (S % M):")
+    print(max_s_mod_m)
+
+maximize_it()

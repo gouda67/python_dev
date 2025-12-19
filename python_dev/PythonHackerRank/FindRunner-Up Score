@@ -1,0 +1,13 @@
+print("Enter the array size")
+n = int(input())
+print("Enter data")
+data = input()    
+arr = [int(char) for char in data]
+
+ordered_arr = set(arr)
+ordered_list = sorted(ordered_arr)
+
+if len(ordered_list) > 1:
+    print(ordered_list[-2])
+else:
+    print("error")

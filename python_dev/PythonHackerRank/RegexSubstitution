@@ -1,0 +1,19 @@
+import re
+
+def replace_operators(line):
+    line = re.sub(r'(?<= )&&(?= )', 'and', line)
+    line = re.sub(r'(?<= )\|\|(?= )', 'or', line)
+    return line
+
+if __name__ == '__main__':
+    print("Enter the number of lines:")
+    n_input = input().strip()
+    if n_input:
+        N = int(n_input)
+        
+        for i in range(N):
+            print(f"Enter line no.{i+1}:")
+            line = input()
+            modified_line = replace_operators(line)
+            print("Modified line:")
+            print(modified_line)

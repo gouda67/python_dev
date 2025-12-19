@@ -1,0 +1,22 @@
+print("Enter the string")
+string = input()
+print("Enter the number of slices")
+num = int(input())
+
+
+def merge_the_tools(string, num):
+    n = len(string)
+    
+    for i in range(0, n, num):
+        t_i = string[i : i + num]
+        u_i = ""
+        encountered_chars = set()
+        
+        for char in t_i:
+            if char not in encountered_chars:
+                u_i += char
+                encountered_chars.add(char)
+                
+        print(u_i)
+
+merge_the_tools(string, num)

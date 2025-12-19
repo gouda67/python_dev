@@ -1,0 +1,34 @@
+from collections import Counter
+import sys
+
+def solve():
+    print("Enter total number of shoes:")
+    line1 = sys.stdin.readline().strip()
+    if not line1: return
+    
+    print("Enter all shoe sizes available in inventory (separated by space):")
+    shoe_sizes = list(map(int, sys.stdin.readline().strip().split()))
+    inventory = Counter(shoe_sizes)
+
+    print("Enter number of customers:")
+    line3 = sys.stdin.readline().strip()
+    if not line3: return
+    N = int(line3)
+    
+    total_earnings = 0
+    
+    for i in range(N):
+        print(f"Enter shoe size and price for customer {i+1} (separated by space):")
+        line = sys.stdin.readline().strip()
+        if not line: continue
+            
+        shoe_size, price = map(int, line.split())
+            
+        if inventory[shoe_size] > 0:
+            total_earnings += price
+            inventory[shoe_size] -= 1
+            
+    print("Total earnings:")
+    print(total_earnings)
+
+solve()

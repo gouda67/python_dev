@@ -1,0 +1,6 @@
+N = int(input())
+sett = set()
+for _ in range(N):
+    country = input().strip()
+    sett.add(country)
+print(len(sett))

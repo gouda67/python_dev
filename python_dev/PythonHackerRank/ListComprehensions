@@ -1,0 +1,17 @@
+print("Enter frist Num")
+x = int(input())
+print("Enter second Num")
+y = int(input())
+print("Enter third Num")
+z = int(input())
+print("Enter fourth Num")
+n = int(input())
+
+result = [
+        [i, j, k] 
+        for i in range(x + 1) 
+        for j in range(y + 1) 
+        for k in range(z + 1) 
+        if i + j + k != n
+        ]
+print(result)

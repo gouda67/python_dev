@@ -1,0 +1,19 @@
+import sys
+
+def power_mod_power():
+    print("Enter the base (a):")
+    a = int(sys.stdin.readline().strip())
+
+    print("Enter the exponent (b):")
+    b = int(sys.stdin.readline().strip())
+
+    print("Enter the modulus (m):")
+    c = int(sys.stdin.readline().strip())
+
+    print(f"Result of a^b:")
+    print(pow(a, b))
+    
+    print(f"Result of (a^b) % m:")
+    print(pow(a, b, c))
+
+power_mod_power()

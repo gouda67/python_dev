@@ -1,0 +1,11 @@
+print("Enter numbers of elements")
+N = int(input())
+sett = set()
+
+for i in range(N):
+    print(f"Enter element no.{i+1}")
+    country = input().strip()
+    sett.add(country)
+
+print("Total unique elements:")
+print(len(sett))

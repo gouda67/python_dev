@@ -1,0 +1,19 @@
+import sys
+
+def integers_come_in_all_sizes():
+    print("Enter a:")
+    a = int(sys.stdin.readline().strip())
+    
+    print("Enter b:")
+    b = int(sys.stdin.readline().strip())
+    
+    print("Enter c:")
+    c = int(sys.stdin.readline().strip())
+    
+    print("Enter d:")
+    d = int(sys.stdin.readline().strip())
+
+    print("Result of (a^b + c^d):")
+    print((a ** b) + (c ** d))
+
+integers_come_in_all_sizes()

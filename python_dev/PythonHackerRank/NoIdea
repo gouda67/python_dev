@@ -1,0 +1,24 @@
+print("Enter n (size of array):")
+n = int(input().split()[0])
+
+print("Enter m (size of sets):")
+m = int(input().split()[0])
+
+print(f"Enter {n} integers for the array (separated by spaces):")
+storage = list(map(int, input().split()))
+
+print(f"Enter {m} integers for Set A (Like):")
+like_set = set(map(int, input().split()))
+
+print(f"Enter {m} integers for Set B (Dislike):")
+dislike_set = set(map(int, input().split()))
+
+happiness = 0
+for num in storage:
+    if num in like_set:
+        happiness += 1
+    elif num in dislike_set:
+        happiness -= 1
+
+print("Your total happiness is:")
+print(happiness)

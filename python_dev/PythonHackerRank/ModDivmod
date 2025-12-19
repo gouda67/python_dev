@@ -1,0 +1,23 @@
+import sys
+
+def mod_divmod():
+    print("Enter the first number (a):")
+    line1 = sys.stdin.readline().strip()
+    if not line1: return
+    a = int(line1)
+
+    print("Enter the second number (b):")
+    line2 = sys.stdin.readline().strip()
+    if not line2: return
+    b = int(line2)
+
+    print("Result of integer division (a // b):")
+    print(a // b)
+    
+    print("Result of modulo operator (a % b):")
+    print(a % b)
+    
+    print("Result of divmod(a, b):")
+    print(divmod(a, b))
+
+mod_divmod()

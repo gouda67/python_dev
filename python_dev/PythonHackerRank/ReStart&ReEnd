@@ -1,0 +1,20 @@
+import re
+
+print("Enter the main string (s):")
+s = input()
+
+print("Enter the substring to find (k):")
+k = input()
+
+matches = list(re.finditer(r'(?={})'.format(k), s))
+
+found = False
+
+for match in matches:
+    start_index = match.start()
+    end_index = match.start() + len(k) - 1
+    print((start_index, end_index))
+    found = True
+    
+if not found:
+    print("(-1, -1)")
